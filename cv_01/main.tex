@@ -1,0 +1,393 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Curriculum Vitae
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: July 2011
+%Version for spanish users, by dgarhdez
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{1pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+                \Huge \hfill #1
+                \par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{White}{%
+			\parbox{5cm}{%
+			\hfill\color{Black}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\noindent\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+\MyName{Milton Ferreira Lima Filho}
+
+
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Dados pessoais}{}
+\begin{minipage}{0.55\textwidth}
+	\begin{tabular}{|p{\textwidth}}
+		\textbf{Nascimento:} 05/04/1983 \newline
+		\textbf{Estado civil:} Casado \newline
+		\textbf{Email:} \href{mailto:flmiltex@gmail.com}{flmiltex@gmail.com} \newline
+		\textbf{Redes Sociais:} \newline
+		\href{https://www.linkedin.com/in/flmilton}{LinkedIn }
+		\href{https://www.facebook.com/flmilton}{ Facebook}
+	\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.45\textwidth}
+	\begin{tabular}{|p{\textwidth}}
+		\textbf{Rua:} Acácio Costa Junior, 153 \newline
+		\textbf{Bairro:} Juliana \newline
+		\textbf{Cep:} 31744-490 - Belo Horizonte/MG \newline
+		\textbf{Tel.:} +55 31 988336867 \newline
+	\end{tabular}
+\end{minipage}%
+
+
+%%% Dados Pessoais
+%%% ------------------------------------------------------------
+\NewPart{Resumo}{}
+Tenho mais de 10 anos de experiência com desenvolvimento de \textit{software}. Colaborei em diversos projetos, tanto em fábricas de \textit{software}, quanto alocado em clientes de vários seguimentos de negócios.
+
+
+%%% Formação Acadêmica
+%%% ------------------------------------------------------------
+\NewPart{Formação Acadêmica}{}
+
+\EducationEntry{Universidade Federal de Minas Gerais}{2021 (in progress)}{Mestrado}{
+	\begin{itemize}
+		\item{Inteligência Computacional para Otimização}
+
+	\end{itemize}
+}
+
+
+\EducationEntry{Universidade Federal de Minas Gerais}{2017 - 2018}{Pós-graduação (especialização)}{
+	\begin{itemize}
+		\item{Engenharia de Software }
+
+	\end{itemize}
+}
+
+\EducationEntry{Universidade Federal de Ouro Preto}{2008 - 2012}{Graduação}{
+	\begin{itemize}
+		\item{Bacharelado em Sitemas de Informação }
+
+	\end{itemize}
+}
+
+\EducationEntry{SENAI/CETEL}{2003 - 2004}{Técnico}{
+	\begin{itemize}
+		\item{Técnico em Eletrônica }
+
+	\end{itemize}
+}
+
+%%% Experiência Profissional
+%%% ------------------------------------------------------------
+\NewPart{Experiência Profissional}{}
+
+\EducationEntry{Analista Desenvolvedor Sr – Invillia.}{}{Outubro/2020 até Dezembro/2020}{
+	\begin{itemize}
+		\item{Desenvolvimento de projetos em squad de criação e monitoramento de microserviços
+		      utilizando a linguagem Kotlin/Java no backend. Criação de proxy para publicação de
+		      microserviços com o Apigee. Seguindo princípios da arquitetura hexagonal.
+			  Criação de testes unitários e de integração alocado no C6bank. Utilizou-se as 
+			  seguintes especificações e tecnologias: \newline \newline 
+		      \textit{Kotlin, Java, Backend For Frontend, Spring, Cloud AWS, Koin, Javalin, Exposed, Fuel, Swagger, OpenApi, WireMock, MockK, REST-
+			      assured, H2, flywaydb, Gradle, Vault, Concorce CI, Rundeck CD, Ansible, Bitbucket,
+			      Sonar, Artifactory, Graylog, Grafana, Prometheus, App Dynamics, Apigee, Docker, Splunk,
+			      Zabbix, Fluentd, Harbor Registry, Trivy Vulnerability Scanner.}}
+
+	\end{itemize}
+}
+
+\EducationEntry{Analista Desenvolvedor Sr – Pif Paf Alimentos S.A.}{}{Março/2019 até Outrubro/2020}{
+	\begin{itemize}
+		\item{Desenvolvimento e implementação de sistemas utilizando a plataforma Java como backend
+		e o javascript(node) como front-end e práticas ágeis juntamente com a cultura de DevOps.
+		Automatização de pipeline utilizando Gitlab e automatização de testes e criação de métricas
+		e configuração do Sonarqube. Integrações de sistemas utilizando princípios de clean architecture 
+		e a especificação microprofile para integrações com sistemas SAP e gateway de pagamento. 
+		Utilizou-se as seguintes especificações e tecnologias: \newline \newline
+		      \textit{SAP Hybris Commerce, Spring Boot, Spring Framework, Spring Data, Spring Security, Spring MVC,
+			  Microprofile, Quarkus, Cloud AWS, Docker, Minikube, Helm, Ansible, Terraform, Python, Gradle,
+			  Jquery, node, gulp, mocha, chai, javascript, Bootstrap, Intellij, Eclipse,VSCode, Postman, SoapUI, 
+			  Sonarqube, GitLab, Git, Sourcetree, MySQL, VPN, ImpEx, Flexible Search.}}
+
+	\end{itemize}
+}
+
+\EducationEntry{Analista Desenvolvedor Sr – FÓTON Informática S.A}{}{Setembro/2018 até Março/2019}{
+	\begin{itemize}
+		\item{Desenvolvimento e implementação de sistemas utilizando práticas ágeis com scrum e as
+		especificações Java Enterprise Edition. Integrações de sistemas utilizando o estilo
+		arquitetural REST e SOAP para integração com sistemas, realização de testes
+		automatizados. Utilizou-se as seguintes especificações e tecnologias: \newline \newline
+		      \textit{Java EE, JBoss EAP 6.1, JSF, JAX-WS, JAX-RS, SQL, JPA, JMS, Primefaces, Jquery,
+			  Arquillian, Eclipse IDE, Docker, Maven, Sonatype Nexus, Jasper Studio Professional, Postman,
+			  SoapUI, GitLab, Git, Sourcetree, TFS, PostgreSQL, PGAdmin}}
+
+	\end{itemize}
+}
+
+\EducationEntry{Analista Desenvolvedor – SQUADRA TECNOLOGIA}{}{Novembro/2017 até Setembro/2018}{
+	\begin{itemize}
+		\item{Desenvolvimento e implementação de sistemas utilizando as especificações Java
+		Enterprise Edition. Integrações de sistemas utilizando o estilo arquitetural REST para
+		integração com sistemas Bancários e WebService SOAP para integrações com ERP Totvs
+		(DataSul). Utilizou-se as seguintes especificações e tecnologias: \newline \newline
+		      \textit{Java EE, JBoss EAP 7.1, JSF 2.2, JAX-WS 2.0, JAX-RS 2.0, OAuth 2, Quartz Job
+			  Scheduling, Struts 2, Docker, Intersystem Caché, SQL, ORM Baseado em Refleção proprietário -
+			  SmartMVCP, Primefaces, Jquery, Velocity, Eclipse IDE, Android Studio, Android SDK,
+			  Jasper Studio Professional, Postman, SoapUI, Bugzilla.}}
+
+	\end{itemize}
+}
+
+\EducationEntry{Analista Desenvolvedor – AXXIOM}{}{Agosto/2017 até Novembro/2017}{
+	\begin{itemize}
+		\item{Desenvolvimento de projeto de SmartGrid da rede de distribuição da compainha energética
+		de Minas Gerais utilizando as especificações Java Enterprise Edition e a plataforma
+		Android alocado na CEMIG. Utilizou-se as seguintes especificações e tecnologias: \newline \newline
+		      \textit{Java EE, Docker, JSF, EJB, JPA, CDI, Primefaces, Hibernate, Wildfly, Git, IBM Informix, SQL,
+			  Eclipse IDE, Maven, Android Studio, Gradle, Android SDK, SoapUI, Postman.}}
+
+	\end{itemize}
+}
+
+\EducationEntry{Analista Desenvolvedor – SQUADRA TECNOLOGIA}{}{Dezembro/2016 até Agosto/2017}{
+	\begin{itemize}
+		\item{Desenvolvimento e implementação de sistemas de logística de coleta de BAGs e Amostras
+		laboratoriais alocado no Instituto Hermes Pardini (Processo de negócio consistia em partes
+		Web e partes Mobile), sistema de integração (WebService) com sistema bancário via API
+		RESTful e integração com ERP Totvs V12 via o protocolo SOAP para emissão e quitação
+		(baixa) de títulos via EDI - Electronic Data Interchange. Utilizou-se as seguintes
+		especificações e tecnologias: \newline \newline
+		      \textit{Java EE 7, Docker, JSF 2.2, JAX-WS 2.0, JAX-RS 2.0, OAuth 2, Quartz Job Scheduling, Struts 2,
+			  Intersystem Caché, SQL, ORM Baseado em Refleção proprietário - SmartMVCP,
+			  Primefaces, Jquery, Velocity, Eclipse IDE, Android Studio, Android SDK, Jasper Studio
+			  Professional, Postman, SoapUI.}}
+
+	\end{itemize}
+}
+
+\EducationEntry{Analista Desenvolvedor Java – Montreal Informática SA}{}{Setembro/2016 até Outubro/2016}{
+	\begin{itemize}
+		\item{Participação em projeto de migração de servidor de aplicação alocado na JUCEMG.
+		Realizando testes e alterações ao consumir WebServices com certificados digitais e
+		correções de Bugs. Os projetos utilizavam o JBoss AS 6 e foram migrados para o Wildfly
+		10. Utilizou-se as seguintes especificações e tecnologias: \newline \newline
+		      \textit{Java EE 7, JSF 2.2, EJB 3.1, JPA 2.1, CDI 1.1, JAX-WS 2.0, Keycloack, RichFaces,
+			  JQuery, Hibernate, Wildfly 10, SVN Subversion, Oracle Database, SQL, Eclipse IDE,
+			  SoapUI, VPNs.}}
+
+	\end{itemize}
+}
+
+\EducationEntry{Analista de Sistemas – Maxinst Consultoria e Tecnologia Ltda}{}{Setembro/2015 até Janeiro/2016}{
+	\begin{itemize}
+		\item{Atribuições / Serviços Realizados: Atendimento a chamados dos clientes, desenvolvimento
+		e aplicação de melhorias ao sistema IBM Máximo. Utilizou-se as seguinte ferramentas e
+		tecnologias: \newline \newline
+		      \textit{WebLogic, WebSphere, IBM DB2, SourceTree, Git, SQL, Java, Eclipse IDE, IBM
+			  Máximo.}}
+
+	\end{itemize}
+}
+
+\EducationEntry{Programador Java – Basis Tecnologia da Informação SA}{}{Janeiro/2014 até Setembro/2015}{
+	\begin{itemize}
+		\item{Atribuições / Serviços Realizados: Desenvolvimento de sistemas utilizando práticas de
+		desenvolvimento ágil e testes unitários e de integração automatizados, utilizando
+		integração contínua e as seguintes ferramentas e tecnologias: \newline \newline
+		      \textit{Plataforma Java, SQL, JIRA, Astah Community, SVN, Git, OracleSQLDeveloper,
+			  Stash, Maven, Jenkins, SonarQube, iReport Designer, Eclipse IDE, SourceTree -
+			  Atlassian, Wildfly 8.2,GWT, SmartGWT, JSON, HTML, CSS, SmartClient, Nexus, Docker,
+			  Banco de dados Oracle 11g, SQL Server, Flywaydb, Arquillian, JUnit, Web Server, Spring Framework,
+			  PiketLink, EJB, Hibernate JPA, CDI, JSF, Primefaces, VPNs}}
+
+	\end{itemize}
+}
+
+\EducationEntry{Analista Desenvolvedor Java – FIEMG}{}{Setembro/2010 até Agosto/2013}{
+	\begin{itemize}
+		\item{Desenvolvimento, implementação e implantação de sistemas utilizando práticas ágeis sobre 
+		a plataforma Java no STI - Setor de Inovação Tecnológica do CETEC/FIEMG. Utilizando as seguintes ferramentas e tecnologias: \newline \newline
+		      \textit{JEE, Eclipse IDE, JBoss Application Server, Apache Tomcat, Google Web Toolkit,
+			  MySQL, MySQL Workbench, PostgreSQL, XWiki Enterprise, XWiki Enterprise
+			  Manager, Servidor Linux CentOS, Protocolo de comunicação Cliente/Servidor SSH,
+			  Linux, Elicitação de Requisitos, UML - Unified Modeling Language, Astah
+			  Community, CMapTools - Knowledge Modeling Kit, FreeMind - Mind mapping
+			  software, Dia Diagram Editor, MS Project, WBS Chart Pro.}}
+
+	\end{itemize}
+}
+
+\EducationEntry{Estagiário Prog. PHP – Fundação Centro Tecnológico de Minas Gerais}{}{Janeiro/2010 até Agosto/2010}{
+	\begin{itemize}
+		\item{Participação no desenvolvimento do SIGLa, um sistema
+		de gerenciamento integrado de laboratórios, utilizando as seguintes tecnologias: \newline \newline
+		      \textit{Controle de versionamento SVN, Zend Framework (MVC), Doctrine (ORM), Dojo
+			  toolkit(View), Desenvolvimento em ambiente Linux Ubuntu 7.10, Apache HTTP
+			  Server, SGBD - MySql 5, Ferramenta de gerenciamento do Banco de Dados –
+			  PHPMyAdmin, Linguagem de programação PHP OO (Orientado a Objetos), IDE
+			  Eclipse PDT}}
+
+	\end{itemize}
+}
+
+\EducationEntry{Técnico em Eletrônica – Fundação Centro Tecnológico de Minas Gerais}{}{Março/2004 até Agosto/2008}{
+	\begin{itemize}
+		\item{Modernização e operacionalização de um reator PVD (Phisical Vapor Deposition).
+		Participação na implementação de circuitos eletrônicos de interface com módulos 
+		de aquisição de dados (DAQ / National Instruments) para controle e monitoramento 
+		através de Software (LabView / National Instruments) e sistemas supervisorios. \newline \newline
+		      \textit{Atuando nas seguintes áreas:
+			  Programação PLC, Linguagem C, Microcontroladores, Sistemas Eletrônicos de Medida e de Controle de Processos, Circuitos Eletrônicos Analógicos e Digitais, Instrumentação Eletrônica, Dispositivos de Potência, Transdutores, Atuadores.}}
+
+	\end{itemize}
+}
+
+
+%%% Certificação
+%%% ------------------------------------------------------------
+\NewPart{Certificações}{}
+\EducationEntry{ORACLE CERTIFIED ASSOCIATE, JAVA SE 8 PROGRAMMER}{}{CertiProf - Setembro/2018}{}
+\EducationEntry{DEVOPS ESSENTIALS PROFESSIONAL CERTIFICATE - DEPC}{}{CertiProf - Outubro/2018}{}
+\EducationEntry{SCRUM FOUNDATION PROFESSIONAL CERTIFICATE - SFPC}{}{CertiProf - Novembro/2018}{}
+\EducationEntry{KANBAN FOUNDATION}{}{CertiProf - Dezembro/2018}{}
+
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Cursos Extra Curricular}{}
+
+\EducationEntry{Scalable Microservices with Kubernetes}{Junho/2021}{by Google - Udacity}{}
+\EducationEntry{Julia Scientific Programming}{Abril/2021}{University of Cape Town}{}
+\EducationEntry{R Programming}{Março/2021}{Jonhs Hopkins University}{}
+\EducationEntry{Python and Flask Framework}{Fevereiro/2021}{Udemy}{}
+\EducationEntry{Deep Learning with Python}{Janeiro/2021}{Udemy}{}
+\EducationEntry{Python and Data Science for beginners}{Dezembro/2020}{Udemy}{}
+\EducationEntry{Orquestração de Conteiners com Kubernetes}{Janeiro/2018}{Udemy}{}
+\EducationEntry{Developing Android Apps}{Janeiro/2017}{Udacity}{}
+\EducationEntry{Android Development for Beginners}{Novembro/2016}{Udacity}{}
+\EducationEntry{Desenvolvimento de Aplicações JEE}{Outubro/2013}{Framework System}{}
+\EducationEntry{Redes de computadores}{Fevereiro/2005}{Training 2020}{}
+\EducationEntry{Gerência de projetos}{Julho/2004}{CETEC}{}
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Idiomas}{}
+
+\SkillsEntry{Idiomas}{Português (fluente)}
+\SkillsEntry{}{Inglês (intermediário)}
+\SkillsEntry{}{Espanhou (básico)\\}
+\SkillsEntry{Proficiência}{Inglês - CENEX FALE UFMG }
+
+%\SkillsEntry{}{}
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Palestra, Seminário e Workshop}{}
+
+\EducationEntry{Deep Dive: Oracle MySQL Cloud Service}{Novembro/2016}{Speaker: Morgan Tocker,
+	MySQL Product Manager, ORACLE}{}
+\EducationEntry{Primefaces Responsivo}{Novembro/2016}{AlgaWorks}{}
+\EducationEntry{Oficina de Srping Framework}{Agosto/2016}{AlgaWorks}{}
+\EducationEntry{Dev App com RAD Studio XE2, DataSnap e
+	Firemonkey para Windows, Mac OS, iPhone e iPad}{Maio/2012}{Delphi Meeting 2012}{}
+\EducationEntry{Hardwares de Aquisição de Dados com LabVIEW}{Abril/2010}{NI National Instruments do Brasil}{}
+\EducationEntry{Software livre e novos paradigma}{Março/2005}{SENAI}{}
+\EducationEntry{Arquitetura de sistemas Automatizados}{Março/2005}{SENAI}{}
+\EducationEntry{LabView (NI) “Painel Virtual do Reator BAS”}{Outubro/2004}{CETEC}{}
+\EducationEntry{Automação dos processos industriais}{Março/2004}{SENAI}{}
+
+%%% References
+%%% ------------------------------------------------------------
+%\NewPart{References}{}
+%Available upon request
+\end{document}
