@@ -1,0 +1,18 @@
+### LaTeX ###
+*.aux
+*.fls
+*.nlo
+*.out
+*.pdf
+*.synctex.gz
+*.fdb_latexmk
+*.log
+outLaTex
+
+## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml

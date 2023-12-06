@@ -1,0 +1,236 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Curriculum Vitae
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: July 2011
+%Version for spanish users, by dgarhdez
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{1pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+                \Huge \hfill #1
+                \par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{White}{%
+			\parbox{5cm}{%
+			\hfill\color{Black}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\noindent\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+\MyName{Michelle Gomes Pereira}
+
+
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Dados pessoais}{}
+\begin{minipage}{0.55\textwidth}
+	\begin{tabular}{|p{\textwidth}}
+		\textbf{Nascimento:} 18/09/1987 \newline
+		\textbf{Estado civil:} Casada \newline
+		\textbf{Email:} \href{mailto:mmichelli6@gmail.com}{mmichelli6@gmail.com} \newline
+		\textbf{Redes Sociais:} \newline
+		\href{https://www.linkedin.com/in/michellegomespereira/}{LinkedIn }
+		\href{https://www.facebook.com/michelle.gomes.904}{ Facebook}
+	\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.45\textwidth}
+	\begin{tabular}{|p{\textwidth}}
+		\textbf{Rua:} Acácio Costa Junior, 153 \newline
+		\textbf{Bairro:} Juliana \newline
+		\textbf{Cep:} 31744-490 - Belo Horizonte/MG \newline
+		\textbf{Tel.:} +55 31 985650762 \newline
+	\end{tabular}
+\end{minipage}%
+
+
+%%% Dados Pessoais
+%%% ------------------------------------------------------------
+\NewPart{Resumo}{}
+Sou Biologa me especializando em \textit{Data Science} , \textit{Big Data} e \textit{Bioinformática}. Cursei disciplinas da 
+pósgraduação no DCC - Departamento de Ciências da Computação, tais como: Ambientes de Computação(Python), Modularidade POO (Java), 
+Bioinformática (Python) e Empreendedorismo. Utilizei ferramentas tais como: VSCode, Git, GitHub, RStudio, R, Python, Pipenv, Jupyter, Java, Eclipse, 
+MS Teams, Miro, Google Meet, Google Colab.
+
+
+%%% Formação Acadêmica
+%%% ------------------------------------------------------------
+\NewPart{Formação Acadêmica}{}
+
+\EducationEntry{Puntifícia Universidade Católica}{2022 - 2023}{Pós-graduação (especialização)}{
+	\begin{itemize}
+		\item{Data Science e Big Data }
+
+	\end{itemize}
+}
+
+\EducationEntry{Universidade Federal de Minas Gerais}{2013 - 2020}{Graduação}{
+	\begin{itemize}
+		\item{Ciências Biológicas }
+
+	\end{itemize}
+}
+
+%%% Experiência Profissional
+%%% ------------------------------------------------------------
+\NewPart{Experiência Profissional}{}
+
+\EducationEntry{Iniciação Científica – UFMG.}{}{Março/2014 até Dezembro/2019}{
+	\begin{itemize}
+		\item{Participação como bolsista voluntário no projeto relacionado a dieta de 
+		animais carnívoros da Serra do Caraça. Realizando coleta e analise de dados e 
+		identificação das espécies presentes nas amostras coletadas dos animais 
+		carnívoros. Realização de monitoria de disciplinas da graduação, tais como: 
+		Fisiologia Vegetal, Botânica para farmácia. Ferramentas utilizadas: \newline \newline 
+		      \textit{Windows, Linux Ubuntu, MS Office, LibreOffice}}
+
+	\end{itemize}
+}
+
+\EducationEntry{Auxiliar Administrativo – Tecar Fiat}{}{Setembro/2013 até Novembro/2013}{
+	\begin{itemize}
+		\item{Responsável por verificar a entrada e saída de correspondências, receber e 
+		enviar documentos, atender chamadas telefônicas, recepcionar o público em geral, 
+		fazer o arquivamento de documentos, manter atualizados os contatos da empresa e 
+		utilização de pacote LibreOffice, sistema operacional Linux e ferramentas de 
+		informática. Ferramentas utilizadas: \newline \newline
+		      \textit{LibreOffice, Linux, Windows, MS Office}}
+
+	\end{itemize}
+}
+
+\EducationEntry{Operador de telemarketing – GPC Gestão e Prospecção de Clientes}{}{Abril/2011 até Junho/2012}{
+	\begin{itemize}
+		\item{Responsável por realizar avaliações do atendimento da revisão veicular e realizar a
+		prospecção de novos clientes. Utilização de ferramentas de informática, pacote LibreOffice,
+		 sistema operacional Linux. Ferramentas utilizadas:\newline \newline
+		      \textit{Windows, Linux, MS Office}}
+
+	\end{itemize}
+}
+
+\EducationEntry{Cobradora Interna – Ação Contact Center}{}{Abril/2005 até Julho/2010}{
+	\begin{itemize}
+		\item{Responsável por contactar clientes inadimplentes de diversos credores no intuito 
+		de realizar acordos financeiros. Utilização de ferramentas de informática, pacote 
+		LibreOffice, sistema operacional Linux. Ferramentas utilizadas: \newline \newline
+		      \textit{Windows, Linux, MS Office}}
+
+	\end{itemize}
+}
+
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Cursos Extra Curricular}{}
+
+\EducationEntry{Administrando Banco de Dados}{Junho/2021}{Fundação Bradesco}{}
+\EducationEntry{Ambiente de Computação}{Abril/2020}{DCC/UFMG}{}
+\EducationEntry{Banco de Dados}{Janeiro/2020}{IFSUL}{}
+\EducationEntry{Bioinformática}{Janeiro/2020}{DCC/UFMG}{}
+\EducationEntry{Bioinformática e aplicações em análises proteômicas}{Julho/2020}{UFV}{}
+\EducationEntry{Ciências de Dados com R}{Janeiro/2021}{UNIFESP}{}
+\EducationEntry{Empreendedorismo}{Setembro/2021}{ICB/UFMG}{}
+\EducationEntry{Implementando Banco de Dados}{Agosto/2021}{Fundação Bradesco}{}
+\EducationEntry{Introdução as Novas Tecnologias}{Setembro/2021}{PBH}{}
+\EducationEntry{Modularidade e POO}{Setembro/2021}{DCC/UFMG}{}
+\EducationEntry{Python para Processamento de Linguagem Natural}{Outubro/2021}{USP}{}
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Idiomas}{}
+
+\SkillsEntry{Idiomas}{Português (fluente)}
+\SkillsEntry{}{Inglês (básico)}
+\SkillsEntry{}{Espanhou (básico)\\}
+
+%\SkillsEntry{}{}
+
+%%% References
+%%% ------------------------------------------------------------
+%\NewPart{References}{}
+%Available upon request
+\end{document}
